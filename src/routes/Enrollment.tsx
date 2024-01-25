@@ -77,6 +77,10 @@ interface EnrollmentGroupProps {
 }
 
 function EnrollmentGroup(props: EnrollmentGroupProps) {
+  if (props.rounds.length === 0) {
+    return <></>;
+  }
+  
   return (
     <div className='card' style={{ marginBottom: 16 }}>
       <div className='card-header'>

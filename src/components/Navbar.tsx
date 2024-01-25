@@ -59,7 +59,7 @@ function Navbar(props: NavbarProps) {
                         <Link to='/reservation-list' className={`nav-link${props.activePage === 'reservation-list' ? ' active' : ''}`}>Lista wniosków</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to='/schedule' className={`nav-link${props.activePage === 'schedule' ? ' active' : ''}`}>Lista planów</Link>
+                        <Link to='/schedules' className={`nav-link${props.activePage === 'schedule' ? ' active' : ''}`}>Lista planów</Link>
                     </li>
                     <li className="flex-grow-1"></li>
                     <li className="nav-item">
