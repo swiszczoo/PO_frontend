@@ -111,6 +111,7 @@ function Enrollment() {
         <h1>Moje zapisy na zajęcia</h1>
         <br/>
         { status === 'success' && data.map((entry: EnrollmentGroupProps) => <EnrollmentGroup {...entry} key={entry.id} />) }
+        { status === 'success' && data.length === 0 && <p>Nie jesteś obecnie przypisany do żadnych zapisów.</p>}
         { status === 'pending' && <p>Wczytywanie danych...</p>}
       </main>
     </>

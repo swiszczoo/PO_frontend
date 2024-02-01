@@ -33,7 +33,7 @@ function ScheduleList() {
   const { status, data } = useQuery({
     queryKey: ['schedules'],
     queryFn: async () => {
-      const { data } = await axios.get('/round/all');
+      const { data } = await axios.get('/schedule/all');
       return data;
     },
     staleTime: 60000,
