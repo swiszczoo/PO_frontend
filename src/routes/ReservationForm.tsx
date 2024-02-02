@@ -118,11 +118,19 @@ function ReservationForm() {
   const rooms = useMemo(() => {
     if (!data) return [];
     let rooms = [];
+    let initialRoom: number | undefined = undefined;
 
     for (const bld of (data.buildings as { id: number, building: { id: number; number: string }, room: { id: number; number: string; } }[])) {
       if (bld.building.id === building) {
+        if (initialRoom === undefined) {
+          initialRoom = bld.room.id;
+        }
         rooms.push(<option value={bld.room.id} key={bld.id}>{bld.room.number}</option>);
       }
+    }
+
+    if (initialRoom !== undefined) {
+      setRoom(initialRoom);
     }
 
     return rooms;

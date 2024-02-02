@@ -87,6 +87,8 @@ function RoomChange(props: RoomChangeProps) {
   const handleAcceptClick = () => {
     setProcessing(true);
     axios.put(`/application/amend/${props.applicationId}?buildingId=${building}&roomId=${room}`).then(() => {
+      return axios.put(`/application/accept/${props.applicationId}`);
+    }).then(() => {
       setProcessing(false);
       client.invalidateQueries({
         queryKey: ['reservation'],
